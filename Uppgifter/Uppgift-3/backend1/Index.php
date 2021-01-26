@@ -13,10 +13,10 @@ $productinfo = array();
   
 for ($i=0; $i < 10 ; $i++) { 
 $product = new product(
-    $produktNamn[(0,count($produktNamn)-1],
-    $pris[0,count($pris)-1],
-    $produktbeskrivning[0,count($produktbeskrivning)-1],
-    $bild[0,count($bild)-1],
+    $produktNamn[$i],
+    $pris[$i],
+    $produktbeskrivning[$i],
+    $bild[$i],
    
 );
     
