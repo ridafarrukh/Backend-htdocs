@@ -37,20 +37,22 @@ class App
              <h2 class='post-title'>
                  $product[name]
              </h2>
+             <a href = '$product[image]' data-lightbox='$product[image]'data-title='$product[name]'>
              <img height = 250 
                  src='$product[image]'
                  alt='$product[name]'
                  class = 'rounded-circle'
                  >
+              </a>
              <div class='post-subtitle'>
-               Price : <b> $product[price] </b>
+               Price : <b> €$product[price] </b>
              </div>
      
              <div class='post-subtitle'>
-                $product[description]
+               <b> Description:</b> $product[description]
              </div>
              <div class='post-subtitle'>
-               Quantity: <b> $product[quantity] </b>
+               In stock: <b> $product[quantity] </b>
              </div>
      
              
