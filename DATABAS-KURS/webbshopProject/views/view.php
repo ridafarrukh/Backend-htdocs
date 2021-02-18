@@ -38,23 +38,20 @@ class View
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                  <ul class="navbar-nav ml-auto">
                   
                   
-                  <li class="nav-item">
-                    <a class="nav-link" href="views/modern/contact.php">Contact</a>
-                  </li>
-                  <li>
-        
-                    <a class="nav-link" href="views/modern/products.php"> Products</a>
-                  </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="views/modern/contact.php">Contact</a>
+                      </li>
+                  
                       
-                    </div>
-                  </li>
+                      
+                    </ul>
+                 
                  
                   
-                </ul>
-              </div>
+                </div>
             </div>
           </nav>
         
@@ -99,7 +96,9 @@ class View
               </a>
             </div>
           </header>
-        
+          <div class = "container">
+            <div class = "row">
+                <div class = "col-lg-8 col-md-10 mx-auto my-4">  
           
         
         HTML;
@@ -112,63 +111,87 @@ class View
        
 
        
-        public function viewFooter()
-        {
-            $date = date('Y');
-    
+    public function viewFooter()
+    {
+           
             $html = <<<HTML
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                  <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-                </div>
-                <!-- /.container -->
-              </footer>
-            
+            <!-- Footer -->
+            <footer class="py-3 bg-dark">
+              <div class="container">
+                 <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+              </div>
+            </footer>
             HTML;
-    
             echo $html;
-        }
- 
+   
+    
+    }
 
+
+    public function viewOneProduct($product)
+    {
+           $html = <<<HTML
+              <div class='post-preview'>
+                 <h2 class='post-title'>
+                     $product[product_name]
+                 </h2>
+                   <a href = '$product[product_image]' data-title='$product[product_name]'>
+                     <img height="250"
+                      src='$product[product_image]'
+                      alt='$product[product_name]'
+                     >
+                   </a>
+             
+                   <div class='post-subtitle'>
+                     <b> Price : </b> €$product[product_price] 
+                   </div>
+                   <div class='post-subtitle'>
+                       <b> Description:</b> $product[product_description]
+                   </div>
+             </div>
+              <div>
+                  <input type="submit" class="form-control my-2 btn btn-lg btn-outline-success" 
+                          value="Place order">
+              </div>
+            HTML;
+              echo $html;
+
+           
+            
+    }
+                
+
+           
+          
+                  
+              
+           
+
+
+                     
+                 
+         
+                 
+            
+        
+           
+    
+    
+    public function viewAllProducts($product)
+    {
+            foreach ($product as $key => $product) {
+                $this->viewOneProduct($product);
+            }
+    }
+    
+    
+    
   
 
 
     
 
-    public function viewOneProduct($product)
-    {
-        $html = <<<HTML
-            <div class="col-md-6">
-                <a href="?id=$product[product_id]">
-                    <div class="card m-1">
-                        <img class="card-img-top" src="$product[product_image]"
-                             alt="$product[product_name]">
-                        <div class="card-body">
-                            <div class="card-title text-center">
-                                <h4>$product[product_name]</h4>
-                                <h5>Price: $product[product_price] kr</h5>
-                                <p><b>Product description:</b> $product[product_description]</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>  <!-- col -->
-            <form>
-            <input type="submit" class="form-control my-2 btn btn-lg btn-outline-success" 
-                            value="Place order">
-                </form>
-        HTML;
-
-        echo $html;
-    }
-
-
-    public function viewAllProducts($product)
-    {
-        foreach ($product as $key => $product) {
-            $this->viewOneProduct($product);
-        }
-    }
+   
 
 
 
