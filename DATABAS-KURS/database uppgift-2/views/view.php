@@ -15,7 +15,7 @@ class View
           <meta name="description" content="">
           <meta name="author" content="">
         
-          <title>Modern Business - Start Bootstrap Template</title>
+          <title>My little webshop</title>
         
           <!-- Bootstrap core CSS -->
           <link href="views/modern/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ class View
           <!-- Navigation -->
           <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-              <a class="navbar-brand" href="index.php">$title</a>
+              <a class="navbar-brand" href="index.php">My little Webshop</a>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,7 +47,7 @@ class View
         
                     <a class="nav-link" href="?showAllProducts">Products</a>
                   </li>
-                      
+                 
                     </div>
                   </li>
                  
@@ -180,16 +180,21 @@ class View
   <div class="container">
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Contact</h1>
-   
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="Admin">Admin</a>
+      </li>
+     
+    </ol>
     <!-- Content Row -->
     <div class="row">
       <!-- Photo Column -->
-      <div class="col-lg-4 mb-2"> <img src="views/modern/images/LG_Photo_01.jpg" width="120" height="150" ;alt="logo bild">
+      <div class="col-lg-2 "> <img src="views/modern/images/LG_Photo_01.jpg" width="120" height="150" ;alt="logo bild">
         <h4>ladan</h4></div>
-        <div class= "col-lg-4 mb-2"><img src="views/modern/images/RW_photo_01.jpg" width="120" height="150" ;alt="logo bild">
+        <div class = "col-lg-2"><img src="views/modern/images/RW_photo_01.jpg" width="120" height="150" ;alt="logo bild">
         <h4>Rida</h4></div>
       <!-- Contact Details Column -->
-      <div class="col-lg-4 mb-4">
+      <div class = "mb-5">
         <h3>Contact Details</h3>
         <p>
           Tomtebodavägen 3A
@@ -263,10 +268,10 @@ HTML;
   {
 
     $html = <<<HTML
-            <div class="col-md-6">
+            <div class="col-lg-8">
                 <br><h3 class='text-center text-primary'>Order form</h3> <br>
                 <h6>Complete the following form to finish your shopping: </h6>
-                <form action="#" method="post">
+                <form action="#" method="post" >
                     <input type="hidden" name="product_id" 
                             value="$product[product_id]">
                                            
@@ -317,11 +322,7 @@ HTML;
     );
   }
 
-  /**
-   * En funktion som skriver ut ett felmeddelande
-   * $messageType enligt Bootstrap Alerts
-   * https://getbootstrap.com/docs/5.0/components/alerts/
-   */
+  
   public function printMessage($message, $messageType = "danger")
   {
     $html = <<< HTML

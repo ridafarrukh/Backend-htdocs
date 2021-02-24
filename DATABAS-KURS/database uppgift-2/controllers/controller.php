@@ -92,11 +92,14 @@ class Controller
         $product_id       = $this->sanitize($_POST['product_id']);
         $confirm     = $this->model->saveOrder($customer_name, $customer_tel, $customer_email, $customer_address, $product_id);
 
+        
+        
         if ($confirm) {
             header("Location:index.php?showConfirmationPage");
         } else {
             $this->view->viewErrorMessage($customer_name);
         }
+        
     }
 
     public function processContactForm()
